@@ -34,12 +34,10 @@
             <div class="tutor-initials">AM</div>
           </div>
           <p class="portrait-name">Abdul Malik</p>
-          <p class="portrait-role">Sinhala Tutor</p>
         </div>
 
         <!-- Title -->
         <div class="title-wrap">
-          <p class="sinhala-title">සිංහල ගුරු</p>
           <h1 class="site-title">Sinhala Guru</h1>
           <p class="site-tagline">Examination Results Portal</p>
           <div class="orn-row">
@@ -69,9 +67,8 @@
 
       <!-- ── SEARCH ── -->
       <section class="search-section" id="searchSection">
-        <p class="search-eyebrow">ප්‍රතිඵල සොයන්න</p>
         <h2 class="search-heading">Find Your Results</h2>
-        <p class="search-desc">Enter your Index Number or Name to retrieve your examination results.</p>
+        <p class="search-desc">Enter your Index Number or Name</p>
 
         <div class="search-card">
           <div class="tab-row">
@@ -101,11 +98,14 @@
       </section>
 
       <!-- ── LOADING ── -->
-      <div id="loaderWrap" style="display:none;" class="state-loader">
-        <div class="spin-ring"></div>
-        <p class="spin-text">Retrieving your results…</p>
+      <div class="loader-wrap" id="loaderWrap" style="display:none;">
+        <div class="lotus-spinner">
+          <div class="petal p1"></div><div class="petal p2"></div>
+          <div class="petal p3"></div><div class="petal p4"></div>
+          <div class="petal p5"></div><div class="petal p6"></div>
+        </div>
+        <p class="loader-text">Retrieving your results…</p>
       </div>
-
       <!-- ── ERROR ── -->
       <div id="errorCard" style="display:none;" class="state-error">
         <div class="err-icon">✕</div>
@@ -119,7 +119,7 @@
         <!-- 1. Student banner (dark header) -->
         <div class="r-banner">
           <div class="r-banner-left">
-            <p class="r-eyebrow">ශිෂ්‍ය ප්‍රතිඵලය</p>
+            <p class="r-eyebrow">Results Sheet</p>
             <h2 class="r-name" id="rName">—</h2>
             <div class="r-chips">
               <span class="r-chip">Index: <strong id="rIndex">—</strong></span>
@@ -264,7 +264,6 @@
         <span class="orn-line"></span>
       </div>
       <p class="footer-text">© <span id="footerYear"></span> Sinhala Guru &nbsp;·&nbsp; Abdul Malik &nbsp;·&nbsp; All Rights Reserved</p>
-      <p class="footer-si">සියලු අයිතිවාසිකම් ඇවිරිණි</p>
     </footer>
 
   </div><!-- .page-wrapper -->
