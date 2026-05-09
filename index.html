@@ -5,257 +5,243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sinhala Guru — Exam Results Portal</title>
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Noto+Serif+Sinhala:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Serif+Sinhala:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+  <!-- Top accent bar -->
   <div class="top-bar"></div>
 
-  <!-- Fixed WhatsApp Fab -->
-  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp Tutor">
-    <svg class="wa-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#25D366"/>
-      <path d="M16 5.5C10.201 5.5 5.5 10.201 5.5 16c0 1.853.497 3.59 1.366 5.09L5.5 26.5l5.572-1.344A10.45 10.45 0 0016 26.5c5.799 0 10.5-4.701 10.5-10.5S21.799 5.5 16 5.5z" fill="#25D366"/>
-      <path d="M21.5 18.79c-.245-.122-1.449-.714-1.673-.796-.224-.081-.387-.122-.55.122-.163.245-.632.796-.775.959-.143.163-.286.183-.53.061-.245-.122-1.033-.381-1.967-1.214-.727-.648-1.218-1.449-1.361-1.693-.143-.245-.015-.377.108-.499.11-.11.245-.286.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.122-.55-1.326-.754-1.815-.198-.477-.4-.412-.55-.42l-.469-.008c-.163 0-.428.061-.653.306-.224.245-.857.837-.857 2.041s.877 2.367 1.0 2.53c.122.163 1.726 2.632 4.183 3.693.585.253 1.041.403 1.395.516.587.187 1.121.16 1.543.097.47-.071 1.449-.591 1.654-1.163.204-.571.204-1.061.143-1.163-.061-.102-.224-.163-.469-.285z" fill="white"/>
+  <!-- WhatsApp FAB (always visible) -->
+  <a class="wa-fab" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with tutor on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.975-1.398A9.935 9.935 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm4.93 13.55c-.2.56-1.18 1.08-1.63 1.14-.41.06-.93.08-1.5-.1-.35-.1-.79-.26-1.35-.51-2.36-1.02-3.9-3.4-4.02-3.56-.12-.16-.98-1.3-.98-2.48s.62-1.76.84-2c.22-.24.48-.3.64-.3.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.72.74 1.84.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.99 1.33 1.6.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.56-.14 1.12z"/>
     </svg>
-    <span class="wa-label">Chat with Tutor</span>
+    <span class="wa-fab-label">Chat with Tutor</span>
   </a>
-
-  <!-- BG decorative circles -->
-  <div class="bg-deco" aria-hidden="true">
-    <div class="bdc bdc1"></div>
-    <div class="bdc bdc2"></div>
-  </div>
 
   <div class="page-wrapper">
 
-    <!-- ══════ HEADER ══════ -->
+    <!-- ════════ HEADER ════════ -->
     <header class="site-header">
-      <div class="header-inner">
 
-        <div class="portrait-col">
+      <div class="header-row">
+        <!-- Tutor portrait -->
+        <div class="portrait-wrap">
           <div class="portrait-ring">
-            <div class="portrait-frame">
-              <img src="tutor.jpg" alt="Abdul Malik" class="tutor-img"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-              <div class="tutor-fallback"><span>AM</span></div>
-            </div>
+            <img src="tutor.jpg" alt="Abdul Malik" class="tutor-img"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="tutor-initials">AM</div>
           </div>
-          <div class="portrait-caption">
-            <span class="portrait-name">Abdul Malik</span>
-            <span class="portrait-role">Sinhala Tutor</span>
-          </div>
+          <p class="portrait-name">Abdul Malik</p>
+          <p class="portrait-role">Sinhala Tutor</p>
         </div>
 
-        <div class="title-col">
-          <div class="sinhala-heading">සිංහල ගුරු</div>
+        <!-- Title -->
+        <div class="title-wrap">
+          <p class="sinhala-title">සිංහල ගුරු</p>
           <h1 class="site-title">Sinhala Guru</h1>
-          <p class="site-sub">Examination Results Portal</p>
-          <div class="header-ornament">
-            <span class="ho-line"></span><span class="ho-gem">❋</span>
-            <span class="ho-line"></span><span class="ho-gem">◆</span>
-            <span class="ho-line"></span><span class="ho-gem">❋</span>
-            <span class="ho-line"></span>
+          <p class="site-tagline">Examination Results Portal</p>
+          <div class="orn-row">
+            <span class="orn-line"></span>
+            <span class="orn-gem">❋</span>
+            <span class="orn-line"></span>
+            <span class="orn-gem">◆</span>
+            <span class="orn-line"></span>
+            <span class="orn-gem">❋</span>
+            <span class="orn-line"></span>
           </div>
         </div>
-
       </div>
 
-      <!-- Upcoming exam notice -->
-      <div class="upcoming-banner" id="upcomingBanner" style="display:none;">
-        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
-          <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"/>
-        </svg>
-        <span class="ub-label">Upcoming:</span>
-        <strong id="ubExamName">—</strong>
-        <span class="ub-sep">·</span>
-        <span id="ubExamDate">—</span>
+      <!-- Upcoming exam notice (shown only when data available) -->
+      <div class="upcoming-notice" id="upcomingNotice" style="display:none;">
+        <span class="un-label">Next Exam</span>
+        <span class="un-name" id="unName">—</span>
+        <span class="un-dot">·</span>
+        <span class="un-date" id="unDate">—</span>
       </div>
 
     </header>
 
-    <!-- ══════ MAIN ══════ -->
-    <main>
+    <!-- ════════ MAIN ════════ -->
+    <main class="main-wrap">
 
       <!-- ── SEARCH ── -->
       <section class="search-section" id="searchSection">
-        <div class="sec-eyebrow">ප්‍රතිඵල සොයන්න</div>
-        <h2 class="sec-title">Find Your Results</h2>
-        <p class="sec-desc">Enter your Index Number or Name to retrieve your examination results.</p>
+        <p class="search-eyebrow">ප්‍රතිඵල සොයන්න</p>
+        <h2 class="search-heading">Find Your Results</h2>
+        <p class="search-desc">Enter your Index Number or Name to retrieve your examination results.</p>
 
         <div class="search-card">
-          <div class="stab-row">
-            <button class="stab active" data-type="index">Index No.</button>
-            <button class="stab" data-type="name">Name</button>
+          <div class="tab-row">
+            <button class="tab active" data-type="index">Index No.</button>
+            <button class="tab" data-type="name">Name</button>
           </div>
-          <div class="search-row">
-            <div class="sinput-wrap">
-              <svg class="sinput-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <div class="input-row">
+            <div class="input-box">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
               <input type="text" id="searchInput" class="search-input"
-                     placeholder="Enter Index Number…" autocomplete="off" spellcheck="false"/>
-              <button class="sinput-clear" id="clearBtn" onclick="clearInput()" style="display:none">✕</button>
+                     placeholder="Enter Index Number…"
+                     autocomplete="off" spellcheck="false" autocorrect="off"/>
+              <button class="input-clear" id="clearBtn" onclick="clearInput()" style="display:none" aria-label="Clear">✕</button>
             </div>
-            <button class="search-btn" onclick="doSearch()">
+            <button class="btn-search" onclick="doSearch()">
               Search
-              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15">
                 <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
               </svg>
             </button>
           </div>
-          <div class="search-hint" id="searchHint">e.g. 2024/001</div>
+          <p class="input-hint" id="inputHint">e.g. 2024/001</p>
         </div>
       </section>
 
-      <!-- ── LOADER ── -->
-      <div id="loaderWrap" style="display:none;" class="loader-section">
-        <div class="lotus-spin">
-          <div class="ls-ring"></div>
-          <div class="ls-core">❋</div>
-        </div>
-        <p class="loader-txt">Retrieving your results…</p>
+      <!-- ── LOADING ── -->
+      <div id="loaderWrap" style="display:none;" class="state-loader">
+        <div class="spin-ring"></div>
+        <p class="spin-text">Retrieving your results…</p>
       </div>
 
       <!-- ── ERROR ── -->
-      <div id="errorCard" style="display:none;" class="error-section">
-        <div class="err-glyph">✕</div>
-        <p id="errorMsg" class="err-text">No record found. Please check your input.</p>
+      <div id="errorCard" style="display:none;" class="state-error">
+        <div class="err-icon">✕</div>
+        <p id="errorMsg">No record found. Please check your input.</p>
         <button class="btn-ghost" onclick="resetSearch()">← Try Again</button>
       </div>
 
-      <!-- ══════ RESULT SECTION ══════ -->
-      <section id="resultSection" style="display:none;" class="result-section">
+      <!-- ════════ RESULT CARD ════════ -->
+      <section id="resultSection" style="display:none;" class="result-card">
 
-        <!-- Student Hero -->
-        <div class="student-hero">
-          <div class="sh-left">
-            <div class="sh-eyebrow">ශිෂ්‍ය ප්‍රතිඵලය</div>
-            <h2 class="sh-name" id="rName">—</h2>
-            <div class="sh-chips">
-              <span class="chip">Index: <b id="rIndex">—</b></span>
-              <span class="chip chip-gold">O/L <b id="rOlYear">—</b></span>
+        <!-- 1. Student banner (dark header) -->
+        <div class="r-banner">
+          <div class="r-banner-left">
+            <p class="r-eyebrow">ශිෂ්‍ය ප්‍රතිඵලය</p>
+            <h2 class="r-name" id="rName">—</h2>
+            <div class="r-chips">
+              <span class="r-chip">Index: <strong id="rIndex">—</strong></span>
+              <span class="r-chip r-chip-gold">O/L <strong id="rOlYear">—</strong></span>
             </div>
           </div>
-          <div class="sh-right">
-            <div class="exam-tag" id="rExam">—</div>
-            <div class="exam-date-row">
-              <svg viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
-                <path d="M3.5 0a.5.5 0 01.5.5V1h8V.5a.5.5 0 011 0V1h1a2 2 0 012 2v11a2 2 0 01-2 2H2a2 2 0 01-2-2V3a2 2 0 012-2h1V.5a.5.5 0 01.5-.5zM2 4v9h12V4H2z"/>
-              </svg>
+          <div class="r-banner-right">
+            <div class="r-exam-tag" id="rExam">—</div>
+            <p class="r-exam-date">
+              <svg viewBox="0 0 14 14" fill="currentColor" width="11" height="11"><path d="M1 2a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H2a1 1 0 01-1-1V2zm1 2v8h10V4H2z"/></svg>
               <span id="rExamDate">—</span>
-            </div>
+            </p>
           </div>
         </div>
 
-        <!-- Grade + Scores -->
-        <div class="scores-wrap">
-          <div class="grade-col">
-            <div class="grade-badge" id="gradeBadge">—</div>
-            <div class="grade-name" id="gradeName">—</div>
+        <!-- 2. Grade banner (attractive full-width colored strip) -->
+        <div class="r-grade-banner" id="rGradeBanner">
+          <div class="rgb-letter" id="rGradeLetter">—</div>
+          <div class="rgb-info">
+            <p class="rgb-name" id="rGradeName">—</p>
+            <p class="rgb-range" id="rGradeRange">—</p>
           </div>
-          <div class="score-grid">
-            <div class="sc-cell">
-              <div class="sc-lbl">Part I</div>
-              <div class="sc-val" id="rPart1">—</div>
-            </div>
-            <div class="sc-cell">
-              <div class="sc-lbl">Part II</div>
-              <div class="sc-val" id="rPart2">—</div>
-            </div>
-            <div class="sc-cell">
-              <div class="sc-lbl">Part III</div>
-              <div class="sc-val" id="rPart3">—</div>
-            </div>
-            <div class="sc-cell sc-total-cell">
-              <div class="sc-lbl">Total</div>
-              <div class="sc-val sc-total" id="rTotal">—</div>
-            </div>
+          <div class="rgb-total">
+            <p class="rgb-total-lbl">Total Score</p>
+            <p class="rgb-total-val" id="rTotal">—</p>
           </div>
         </div>
 
-        <!-- Class Performance + Rank -->
-        <div class="perf-section">
-          <div class="perf-header">
+        <!-- 3. Score breakdown (Part I, II, III only) -->
+        <div class="r-scores">
+          <div class="score-cell">
+            <p class="score-lbl">Part I</p>
+            <p class="score-val" id="rPart1">—</p>
+          </div>
+          <div class="score-cell">
+            <p class="score-lbl">Part II</p>
+            <p class="score-val" id="rPart2">—</p>
+          </div>
+          <div class="score-cell">
+            <p class="score-lbl">Part III</p>
+            <p class="score-val" id="rPart3">—</p>
+          </div>
+        </div>
+
+        <!-- 4. Class performance -->
+        <div class="r-perf">
+          <div class="perf-header-row">
             <h3 class="perf-title">Class Performance</h3>
-            <div class="rank-pill" id="rankPill">
-              <span class="rp-label">Class Rank</span>
-              <span class="rp-num" id="rRank">#—</span>
-              <span class="rp-of" id="rTotalStudents">of — students</span>
+            <div class="rank-badge" id="rankBadge">
+              <span class="rank-lbl">Rank</span>
+              <span class="rank-num" id="rRank">—</span>
+              <span class="rank-of" id="rRankOf">—</span>
             </div>
           </div>
 
-          <!-- Comparison bar -->
-          <div class="cbar-wrap">
-            <div class="cbar-track">
-              <div class="cbar-fill" id="cbarFill" style="width:0%"></div>
-              <div class="cbar-marker" id="cbarMarker" style="left:100%"></div>
+          <!-- Simple clean comparison bar — no pseudo-element overflow -->
+          <div class="cmp-bar-wrap">
+            <div class="cmp-bar-track">
+              <div class="cmp-bar-fill" id="cmpFill" style="width:0%"></div>
             </div>
           </div>
-          <div class="cbar-labels">
-            <div class="cbl-mine">
-              <div class="cbl-title">My Mark</div>
-              <div class="cbl-val" id="cbMine">—</div>
+
+          <div class="cmp-labels">
+            <div class="cmp-col cmp-mine">
+              <p class="cmp-lbl">My Mark</p>
+              <p class="cmp-val" id="cmpMine">—</p>
             </div>
-            <div class="cbl-gap">
-              <div class="cbl-title">Gap to Highest</div>
-              <div class="cbl-val cbl-gap-val" id="cbGap">—</div>
+            <div class="cmp-col cmp-gap">
+              <p class="cmp-lbl">Gap to Highest</p>
+              <p class="cmp-val cmp-gap-val" id="cmpGap">—</p>
             </div>
-            <div class="cbl-high">
-              <div class="cbl-title">Class Highest</div>
-              <div class="cbl-val" id="cbHigh">—</div>
+            <div class="cmp-col cmp-high">
+              <p class="cmp-lbl">Class Highest</p>
+              <p class="cmp-val" id="cmpHigh">—</p>
             </div>
           </div>
         </div>
 
-        <!-- Motivational Quote -->
-        <div class="quote-wrap" id="quoteWrap">
-          <div class="quote-lotus">❋</div>
-          <blockquote class="quote-en" id="quoteEn">—</blockquote>
-          <p class="quote-si" id="quoteSi">—</p>
+        <!-- 5. Motivational quote (English only) -->
+        <div class="r-quote" id="rQuote">
+          <span class="quote-ornament">❝</span>
+          <blockquote class="quote-text" id="quoteText">—</blockquote>
         </div>
 
-        <!-- Instructor Review -->
-        <div class="review-wrap">
-          <div class="review-head">
-            <span class="review-pen">✎</span>
-            <span class="review-title">Instructor's Review</span>
-          </div>
+        <!-- 6. Instructor review -->
+        <div class="r-review">
+          <p class="review-label">✎ Instructor's Review</p>
           <p class="review-body" id="rReview">—</p>
         </div>
 
-        <!-- Progress Map -->
-        <div class="chart-section" id="chartSection" style="display:none;">
-          <div class="sec-divider">
+        <!-- 7. Progress map (shown only if history exists) -->
+        <div id="progressSection" style="display:none;" class="r-section">
+          <div class="section-divider">
             <span class="sd-line"></span>
-            <span class="sd-label">ප්‍රගතිය · Progress Map</span>
+            <span class="sd-text">ප්‍රගතිය · Progress Map</span>
             <span class="sd-line"></span>
           </div>
-          <div class="chart-container" id="progressChart"></div>
-          <p class="chart-note">Your journey across all examinations</p>
+          <div class="chart-box" id="progressChart"></div>
+          <p class="chart-caption">Your journey across all examinations</p>
         </div>
 
-        <!-- Previous Exams -->
-        <div class="history-section" id="historySection" style="display:none;">
-          <div class="sec-divider">
+        <!-- 8. Previous exams (shown only if history exists) -->
+        <div id="historySection" style="display:none;" class="r-section">
+          <div class="section-divider">
             <span class="sd-line"></span>
-            <span class="sd-label">පෙර විභාග · Previous Exams</span>
+            <span class="sd-text">පෙර විභාග · Previous Exams</span>
             <span class="sd-line"></span>
           </div>
           <div id="historyList" class="history-list"></div>
         </div>
 
-        <!-- Action Bar -->
-        <div class="action-bar">
-          <button class="btn-download" onclick="downloadResult()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="17" height="17">
+        <!-- 9. Actions -->
+        <div class="r-actions">
+          <button class="btn-pdf" onclick="downloadResult()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
               <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
             Save as PDF
           </button>
-          <button class="btn-wa" onclick="openWhatsApp()">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17">
+          <button class="btn-wa-action" onclick="openWhatsApp()">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.975-1.398A9.935 9.935 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm4.93 13.55c-.2.56-1.18 1.08-1.63 1.14-.41.06-.93.08-1.5-.1-.35-.1-.79-.26-1.35-.51-2.36-1.02-3.9-3.4-4.02-3.56-.12-.16-.98-1.3-.98-2.48s.62-1.76.84-2c.22-.24.48-.3.64-.3.16 0 .32 0 .46.01.15.01.35-.06.54.42.2.5.68 1.72.74 1.84.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.99 1.33 1.6.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.56-.14 1.12z"/>
             </svg>
             Ask Tutor
@@ -263,26 +249,27 @@
           <button class="btn-ghost" onclick="resetSearch()">← New Search</button>
         </div>
 
-        <p class="result-watermark">✦ Sinhala Guru · Abdul Malik · Strictly Confidential ✦</p>
+        <p class="r-watermark">✦ Sinhala Guru · Abdul Malik · Strictly Confidential ✦</p>
 
-      </section>
+      </section><!-- end result-card -->
+
     </main>
 
-    <!-- ══════ FOOTER ══════ -->
+    <!-- ════════ FOOTER ════════ -->
     <footer class="site-footer">
-      <div class="footer-orn">
-        <span class="ho-line"></span><span class="ho-gem">❋</span>
-        <span class="ho-line"></span><span class="ho-gem">◆</span>
-        <span class="ho-line"></span><span class="ho-gem">❋</span>
-        <span class="ho-line"></span>
+      <div class="orn-row">
+        <span class="orn-line"></span><span class="orn-gem">❋</span>
+        <span class="orn-line"></span><span class="orn-gem">◆</span>
+        <span class="orn-line"></span><span class="orn-gem">❋</span>
+        <span class="orn-line"></span>
       </div>
-      <p class="footer-main">© <span id="footerYear"></span> Sinhala Guru &nbsp;·&nbsp; Abdul Malik &nbsp;·&nbsp; All Rights Reserved</p>
-      <p class="footer-si">සියලු අයිතිවාසිකම් ඇවිරිණි &nbsp;·&nbsp; ප්‍රතිඵල රහස්‍ය</p>
+      <p class="footer-text">© <span id="footerYear"></span> Sinhala Guru &nbsp;·&nbsp; Abdul Malik &nbsp;·&nbsp; All Rights Reserved</p>
+      <p class="footer-si">සියලු අයිතිවාසිකම් ඇවිරිණි</p>
     </footer>
 
   </div><!-- .page-wrapper -->
 
-  <!-- PRINT AREA – iOS/Android/Desktop safe PDF -->
+  <!-- Print area for iOS-safe PDF (hidden, only visible during print) -->
   <div id="printArea"></div>
 
   <script src="script.js"></script>
