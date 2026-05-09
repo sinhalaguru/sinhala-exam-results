@@ -6,7 +6,7 @@
    ════════════════════════════════════════════════ */
 const CONFIG = {
   API_URL:          "https://script.google.com/macros/s/AKfycbxfsURpAEBhbg2SfTfaQXA4M8nBKhYi0S46cp-vbxMhdSB6nFzBnqasQIfS8CU9foHz/exec",
-  WHATSAPP_NUMBER:  "94766977490",      // Sri Lanka: 94 + mobile (no leading 0)
+  WHATSAPP_NUMBER:  "94767660101",      // Sri Lanka: 94 + mobile (no leading 0)
   WHATSAPP_MSG:     "Hello Sir, I have a question about my Sinhala exam results.",
   TUTOR_NAME:       "Sinhala Guru"
 };
@@ -76,7 +76,7 @@ document.querySelectorAll(".tab").forEach(btn => {
 
     const cfg = {
       index: { ph: "Enter Index Number…",  hint: "e.g. 2024/001" },
-      name:  { ph: "Enter Full Name…",      hint: "e.g. Kamal Perera" }
+      name:  { ph: "Enter Full Name…",      hint: "e.g. Mahoshadha Pandithuma" }
     };
     const inp = document.getElementById("searchInput");
     inp.placeholder = cfg[searchType].ph;
