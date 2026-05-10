@@ -238,13 +238,54 @@ body {
    STATES (loader / error)
 ══════════════════════════════════════════ */
 .state-loader { text-align: center; padding: 64px 0; animation: fadeIn .3s ease; }
-.spin-ring {
-  width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 18px;
-  border: 3px solid var(--cream-d);
-  border-top-color: var(--maroon);
-  border-right-color: var(--gold-l);
-  animation: spin 1.1s linear infinite;
+
+.lotus-loader {
+  width: 72px; height: 72px; margin: 0 auto 22px;
+  position: relative; display: flex; align-items: center; justify-content: center;
 }
+
+.petal-wrap {
+  position: absolute; inset: 0;
+  animation: spin 3s linear infinite;
+}
+
+.petal {
+  position: absolute;
+  width: 14px; height: 28px;
+  background: linear-gradient(180deg, var(--gold-l) 0%, var(--maroon) 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  left: 50%; top: 50%;
+  transform-origin: 0 0;
+  opacity: 0.2;
+}
+
+/* Position each of the 8 petals around the centre */
+.petal:nth-child(1) { transform: rotate(0deg)   translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 0s; }
+.petal:nth-child(2) { transform: rotate(45deg)  translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 0.2s; }
+.petal:nth-child(3) { transform: rotate(90deg)  translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 0.4s; }
+.petal:nth-child(4) { transform: rotate(135deg) translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 0.6s; }
+.petal:nth-child(5) { transform: rotate(180deg) translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 0.8s; }
+.petal:nth-child(6) { transform: rotate(225deg) translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 1.0s; }
+.petal:nth-child(7) { transform: rotate(270deg) translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 1.2s; }
+.petal:nth-child(8) { transform: rotate(315deg) translateX(-7px) translateY(-28px); animation: petalPulse 1.6s ease-in-out infinite; animation-delay: 1.4s; }
+
+.lotus-core {
+  position: relative; z-index: 1;
+  font-size: 1.1rem; color: var(--maroon);
+  animation: corePulse 1.6s ease-in-out infinite;
+  line-height: 1;
+}
+
+@keyframes petalPulse {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 1; }
+}
+
+@keyframes corePulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.5; }
+  50%       { transform: scale(1.1);  opacity: 1; }
+}
+
 .spin-text { font-style: italic; color: var(--text-m); }
 
 .state-error {
