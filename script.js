@@ -122,7 +122,7 @@ async function doSearch() {
     if (data.nextExam && data.nextExam.name) {
       setText("unName", data.nextExam.name);
       setText("unDate", data.nextExam.date ? formatDate(data.nextExam.date) : "");
-      show("upcomingNotice");
+      document.getElementById("upcomingNotice").style.display = "inline-flex";
     }
 
   } catch (err) {
@@ -323,40 +323,40 @@ function downloadResult() {
   const gi  = GRADE_INFO[g] || { name: g, range: "" };
   const col = GRADE_COLORS[g] || "#611220";
 
-  document.getElementById("printArea").innerHTML = `
+ document.getElementById("printArea").innerHTML = `
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:Georgia,serif;color:#1E0D07;background:white;padding:0;}
-  .pw{max-width:660px;margin:0 auto;padding:36px 40px;}
-  .topbar{height:5px;background:linear-gradient(90deg,#440D18,#BF8814,#611220,#BF8814,#440D18);margin-bottom:28px;}
-  .hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;padding-bottom:18px;border-bottom:1.5px solid #EEE4CA;}
-  .school{font-size:1.9rem;font-weight:900;color:#440D18;line-height:1.1;}
-  .school-sub{font-size:.85rem;color:#8A6040;font-style:italic;margin-top:3px;}
-  .tag{display:inline-block;background:#611220;color:#F0D580;padding:3px 12px;border-radius:20px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:7px;}
-  .cert-title{font-size:1rem;color:#611220;letter-spacing:.08em;text-transform:uppercase;}
-  .cert-date{font-size:.8rem;color:#8A6040;margin-top:4px;text-align:right;}
-  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;background:#FAF3E3;padding:16px 18px;border-radius:10px;border:1px solid #EEE4CA;}
-  .ifield label{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#8A6040;margin-bottom:3px;}
-  .ifield span{font-size:.97rem;font-weight:600;}
-  .grade-row{display:flex;align-items:center;gap:16px;margin-bottom:18px;padding:14px 18px;border-radius:10px;background:${col}18;border:1px solid ${col}30;}
-  .g-box{width:60px;height:60px;border-radius:12px;background:${col};display:flex;align-items:center;justify-content:center;font-size:1.9rem;font-weight:900;color:white;flex-shrink:0;}
-  .g-info label{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:${col};}
-  .g-info span{font-size:1.1rem;font-weight:700;color:${col};}
-  .scores{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid #EEE4CA;border-radius:10px;overflow:hidden;margin-bottom:18px;}
-  .sc{padding:16px 12px;text-align:center;border-right:1px solid #EEE4CA;}
+  body{font-family:Georgia,serif;color:#1E0D07;background:white;}
+  .pw{max-width:640px;margin:0 auto;padding:22px 28px;}
+  .topbar{height:4px;background:linear-gradient(90deg,#440D18,#BF8814,#611220,#BF8814,#440D18);margin-bottom:18px;}
+  .hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:1.5px solid #EEE4CA;}
+  .school{font-size:1.6rem;font-weight:900;color:#440D18;line-height:1.1;}
+  .school-sub{font-size:.78rem;color:#8A6040;font-style:italic;margin-top:2px;}
+  .tag{display:inline-block;background:#611220;color:#F0D580;padding:2px 10px;border-radius:20px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-top:5px;}
+  .cert-title{font-size:.88rem;color:#611220;letter-spacing:.08em;text-transform:uppercase;}
+  .cert-date{font-size:.74rem;color:#8A6040;margin-top:3px;text-align:right;}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;background:#FAF3E3;padding:10px 14px;border-radius:8px;border:1px solid #EEE4CA;}
+  .ifield label{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#8A6040;margin-bottom:2px;}
+  .ifield span{font-size:.9rem;font-weight:600;}
+  .grade-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;padding:10px 14px;border-radius:8px;background:${col}18;border:1px solid ${col}30;}
+  .g-box{width:50px;height:50px;border-radius:10px;background:${col};display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:900;color:white;flex-shrink:0;}
+  .g-info label{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:${col};}
+  .g-info span{font-size:1rem;font-weight:700;color:${col};}
+  .scores{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid #EEE4CA;border-radius:8px;overflow:hidden;margin-bottom:10px;}
+  .sc{padding:10px 8px;text-align:center;border-right:1px solid #EEE4CA;}
   .sc:last-child{border-right:none;}
-  .sc label{display:block;font-size:.63rem;text-transform:uppercase;letter-spacing:.12em;color:#8A6040;margin-bottom:7px;}
-  .sc .val{font-size:1.7rem;font-weight:700;color:#611220;}
-  .total-row{text-align:center;margin-bottom:18px;}
-  .total-row .tl{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#8A6040;}
-  .total-row .tv{font-size:2.2rem;font-weight:900;color:#440D18;}
-  .review{background:linear-gradient(135deg,rgba(22,82,80,.07),rgba(22,82,80,.03));border:1px solid #C0E0DF;border-radius:10px;padding:13px 16px;margin-bottom:20px;}
-  .review label{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#165250;margin-bottom:5px;}
-  .review p{font-style:italic;font-size:.97rem;}
-  .footer{text-align:center;border-top:1px solid #EEE4CA;padding-top:14px;margin-top:10px;}
-  .footer p{font-size:.75rem;color:#8A6040;font-style:italic;}
-  .footer .sig{font-size:.88rem;color:#611220;margin-top:3px;}
-  @media print{@page{margin:12mm;}}
+  .sc label{display:block;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:#8A6040;margin-bottom:5px;}
+  .sc .val{font-size:1.5rem;font-weight:700;color:#611220;}
+  .total-row{text-align:center;margin-bottom:10px;}
+  .total-row .tl{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#8A6040;}
+  .total-row .tv{font-size:1.9rem;font-weight:900;color:#440D18;}
+  .review{background:linear-gradient(135deg,rgba(22,82,80,.07),rgba(22,82,80,.03));border:1px solid #C0E0DF;border-radius:8px;padding:9px 13px;margin-bottom:12px;}
+  .review label{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#165250;margin-bottom:4px;}
+  .review p{font-style:italic;font-size:.9rem;}
+  .footer{text-align:center;border-top:1px solid #EEE4CA;padding-top:10px;margin-top:8px;}
+  .footer p{font-size:.7rem;color:#8A6040;font-style:italic;}
+  .footer .sig{font-size:.82rem;color:#611220;margin-top:2px;}
+  @media print{@page{size:A4;margin:10mm;}}
 </style>
 <div class="pw">
   <div class="topbar"></div>
@@ -414,7 +414,7 @@ function hide(id)          { const e = document.getElementById(id); if (e) e.sty
 function setText(id, val)  { const e = document.getElementById(id); if (e) e.textContent = val; }
 
 function hideAll() {
-  hide("resultSection"); hide("errorCard"); hide("loaderWrap");
+  hide("resultSection"); hide("errorCard"); hide("loaderWrap"); hide("upcomingNotice");
   hide("progressSection"); hide("historySection");
   currentData = null;
   // Reset bar width
